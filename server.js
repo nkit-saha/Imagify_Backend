@@ -8,11 +8,10 @@ const PORT = process.env.PORT || 4000
 const app = express()
 app.use(express.json())
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://imagify-frontend-dfc3.vercel.app/'] 
-    : ['http://localhost:3000', 'http://localhost:5173'],
+  origin: 'https://imagify-frontend-dfc3.vercel.app',
   credentials: true
-}))
+}));
+
 await connectDB()
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
