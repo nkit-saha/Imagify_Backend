@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://your-frontend-domain.vercel.app'] 
+    ? [process.env.FRONTEND_URL || 'https://imagify-frontend-dfc3.vercel.app/'] 
     : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true
 }))
